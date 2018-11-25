@@ -10,14 +10,15 @@ type Book struct{
 	Length string
 }
 const (
-	DB_USER = "postgres"
-	DB_PASSWORD = "root"
-	DB_NAME = "lab"
+	DB_USER = "sysudmlbylkzhn"
+	DB_PASSWORD = "606e1d22ba3a82107f0fe77589301c6f886fb7fe724a4c0f3cd1902a4f22fff4"
+	DB_NAME = "d7om04nn29ehre"
+	DB_HOST = "ec2-54-83-8-246.compute-1.amazonaws.com"
 )
 func dbConnect() error {
 	var err error
-	db, err = sql.Open("postgres", fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable",
-	DB_USER, DB_PASSWORD, DB_NAME))
+	db, err = sql.Open("postgres", fmt.Sprintf("user=%s password=%s dbname=%s host=%s sslmode=disable",
+	DB_USER, DB_PASSWORD, DB_NAME, DB_HOST))
 	if err != nil {
 		return err
 	}
